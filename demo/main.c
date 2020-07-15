@@ -5,9 +5,7 @@
 int main(){
     cf_mod_setup();
     cf_factory* factory = cf_find_factory("cf_3d_factory");
-    assert(factory != NULL);
     cf_element* sdlsink = cf_factory_create_elem(factory,"sdlsink",NULL);
-    assert(sdlsink != NULL);
 
     cf_element_start(sdlsink);
     while(true){

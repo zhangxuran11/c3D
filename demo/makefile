@@ -3,6 +3,7 @@ CFWK_DIR = ../../cFWK/
 target =  demo3d
 
 C_FLAGS=
+LD_FLAGS=-lSDL2
 src=  $(CFWK_DIR)/cf_test/cf_test.c \
 	  $(CFWK_DIR)/cf_allocator/cf_allocator_simple.c \
 	  $(CFWK_DIR)/cf_collection/cf_list.c \
@@ -16,12 +17,13 @@ src=  $(CFWK_DIR)/cf_test/cf_test.c \
 	  $(CFWK_DIR)/cf_test_case/cf_list_test.c \
 	  $(CFWK_DIR)/cf_test_case/cf_module_test.c \
 	  ../cf_3d_factory.c \
+	  ../sdlsink.c \
 	  main.c
 
 obj := $(src:c=o)
 
 all:	$(obj)
-	$(CC)	-g $(C_FLAGS) -I$(CFWK_DIR) $^ -o $(target)
+	$(CC)	-g $(C_FLAGS) -I$(CFWK_DIR) $^ $(LD_FLAGS) -o $(target)
 $(obj): %.o : %.c
 	$(CC) -g $(C_FLAGS) -I$(CFWK_DIR) -o $@ -c $^
 clean:
