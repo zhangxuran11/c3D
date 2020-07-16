@@ -5,9 +5,10 @@
 int main(){
     cf_mod_setup();
     cf_factory* factory = cf_find_factory("cf_3d_factory");
-    cf_element* sdlsink = cf_factory_create_elem(factory,"sdlsink",NULL);
-
-    cf_element_start(sdlsink);
+    cf_element* sdlsink = cf_factory_create_elem(factory,"cf_sdlsink",NULL);
+    cf_element* painter = cf_factory_create_elem(factory,"cf_triangle_painter",NULL);
+    cf_element_link(painter,sdlsink);
+    cf_element_start(painter);
     while(true){
         cf_msleep(10);
     };

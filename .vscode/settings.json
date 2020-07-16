@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "cf_element_priv.h": "c"
+        "cf_element_priv.h": "c",
+        "cf_module.h": "c"
     }
 }
