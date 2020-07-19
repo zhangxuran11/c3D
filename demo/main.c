@@ -10,6 +10,8 @@ int main(){
     cf_element_link(painter,sdlsink);
     cf_element_start(painter);
     while(true){
+        cf_element_set_attr(painter,"color",(void*)0xff000000);
+        cf_element_push(painter,NULL);
         cf_msleep(10);
     };
     return 0;
