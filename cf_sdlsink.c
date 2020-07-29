@@ -38,7 +38,6 @@ static int sdlsink_constructor(cf_element* elem){
         cf_allocator_simple_free(sink);
         return CF_FAILURE;
     }
-    cf_log(NULL,CF_LOG_INFO,"ccc\n");
     cf_element_set_priv(elem,sink);
     return CF_OK;
 
