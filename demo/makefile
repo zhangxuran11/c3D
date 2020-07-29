@@ -9,6 +9,9 @@ src=  $(CFWK_DIR)/cf_test/cf_test.c \
 	  $(CFWK_DIR)/cf_collection/cf_list.c \
 	  $(CFWK_DIR)/cf_collection/cf_string.c \
 	  $(CFWK_DIR)/cf_collection/cf_iterator.c \
+	  $(CFWK_DIR)/cf_collection/cf_hash.c \
+	  $(CFWK_DIR)/cf_iostream/cf_iostream.c \
+	  $(CFWK_DIR)/cf_logger/cf_logger.c \
 	  $(CFWK_DIR)/cf_module/cf_module.c \
 	  $(CFWK_DIR)/cf_thread/cf_thread.c \
 	  $(CFWK_DIR)/cf_factory/cf_factory.c \

@@ -1,8 +1,9 @@
 #include "cf_module/cf_module.h"
 #include "cf_factory/cf_factory.h"
+#include "cf_std.h"
 #include <stdio.h>
-static void triangle_painter_constructor(cf_element* elem){
-
+static int triangle_painter_constructor(cf_element* elem){
+    return CF_OK;
 }
 
 static void triangle_painter_attr_write(cf_element* elem,void* attr){

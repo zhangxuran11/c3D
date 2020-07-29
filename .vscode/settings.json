@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "cf_element_priv.h": "c",
-        "cf_module.h": "c"
+        "cf_module.h": "c",
+        "cf_allocator_simple.h": "c"
     }
 }

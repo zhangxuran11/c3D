@@ -2,6 +2,7 @@
 //#include <SDL2/SDL_surface.h>
 #include "cf_module/cf_module.h"
 #include "cf_factory/cf_factory.h"
+#include "cf_logger/cf_logger.h"
 #include "cf_allocator/cf_allocator_simple.h"
 #include "cf_std.h"
 #include <assert.h>
@@ -29,10 +30,18 @@ static void sdlsink_start(cf_element* elem){
     SDL_UpdateWindowSurface(sink->win);
 }
 
-static void sdlsink_constructor(cf_element* elem){
+static int sdlsink_constructor(cf_element* elem){
     sdlsink* sink = (sdlsink*)cf_allocator_simple_alloc(sizeof(sdlsink));
     sink->win = SDL_CreateWindow("sdlsink",100,100,400,400,0);
+    if(sink->win == NULL){
+        cf_log(NULL,CF_LOG_ERROR,"SDL_CreateWindow failure\n");
+        cf_allocator_simple_free(sink);
+        return CF_FAILURE;
+    }
+    cf_log(NULL,CF_LOG_INFO,"ccc\n");
     cf_element_set_priv(elem,sink);
+    return CF_OK;
+
 }
 static void sdlsink_deconstructor(cf_element* elem){
     
